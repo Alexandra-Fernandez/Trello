@@ -12,7 +12,7 @@ body {
 	font-size: 15px;
 	display: block;
 	cursor: pointer;
-	font-family: sans-serif;
+	font-family: cursive;;
 }
 
 #añade:hover {
@@ -34,6 +34,7 @@ body {
 	padding: 8px;
 	border-radius: 10px;
 	color: white;
+	font-family: cursive;
 }
 
 #input {
@@ -46,4 +47,37 @@ body {
 }
 .aparecer{
 	display: none;
+}
+.titulo-lista{
+	width: 20%;
+	background-color: #e2e4e6;
+	color: dimgrey;
+	font-size: 15px;
+	display: block;
+	cursor: pointer;
+	font-family: sans-serif;
+	text-align: center;
+	padding: 10px 0px 10px 0px;
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+	font-family: fantasy;
+	font-size: larger;
+}
+.nueva-tarjeta{
+	width: 20%;
+	background-color: #e2e4e6;
+	color: dimgrey;
+	font-size: 15px;
+	display: block;
+	font-family: sans-serif;
+	float: left;
+	text-align: center;
+	padding: 10px 0px 20px 0px;
+	border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+	font-family: cursive;
+}
+
+
+
 }
