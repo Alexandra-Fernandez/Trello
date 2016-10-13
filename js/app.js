@@ -4,7 +4,7 @@ window.addEventListener("load",function(){
 	var input = document.getElementById("input");
 	var formulario = document.getElementById("formulario");
     var contenedor = document.getElementById("contenedor");
-    var subContenedor = document.getElementById("sub-contenedor");
+    var subContenedor = document.getElementById("subcontenedor");
 
 	spanAñadir.addEventListener("click",imprimirFormulario);
     boton.addEventListener("click",imprimirNombreLista);
@@ -12,7 +12,7 @@ window.addEventListener("load",function(){
     function imprimirFormulario(){
         
         formulario.classList.remove("aparecer");
-        spanAñadir.remove();
+        spanAñadir.classList.add("aparecer");
         input.focus();
     };
     
@@ -34,5 +34,16 @@ window.addEventListener("load",function(){
         subContenedor.appendChild(crearTajeta);
         
         input.value = "";
+        
+       // var nuevasTarjetas = document.createElement("div");
+       // crearTajeta.insertBefore(nuevasTarjetas, crearTajeta.children[3]);
+         divNuevo();
     };
+    function divNuevo(){
+        var nuevoDiv = document.createElement("div");
+        contenedor.appendChild(nuevoDiv);
+        nuevoDiv.appendChild(spanAñadir);
+        nuevoDiv.appendChild(formulario);
+        spanAñadir.classList.remove ("desaparecer");
+    }
 });

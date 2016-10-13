@@ -1,7 +1,10 @@
 body {
 	background-color: lemonchiffon;
 }
-
+.subcontenedor{
+	display: inline-block;
+	vertical-align: top;
+}
 
 #añade {
 	width: 20%;
@@ -10,9 +13,8 @@ body {
 	border-radius: 7px;
 	color: white;
 	font-size: 15px;
-	display: block;
 	cursor: pointer;
-	font-family: cursive;;
+	font-family: sans-serif;
 }
 
 #añade:hover {
@@ -26,6 +28,7 @@ body {
 	background-color:#e2e4e6;
 	padding: 20px;
 	border-radius: 8%;
+	float: left;
 }
 
 #boton {
@@ -34,15 +37,13 @@ body {
 	padding: 8px;
 	border-radius: 10px;
 	color: white;
-	font-family: cursive;
+	font-family: sans-serif;
 }
 
 #input {
 	width: 100%;
 	height: 30px;;
-	background-color: rgba(227,230,231);
 	border-style: none;
-	box-shadow: inset 0 1px 8px rgba (0,0,0,18);
 	border-radius: 7px;
 }
 .aparecer{
@@ -52,16 +53,14 @@ body {
 	width: 20%;
 	background-color: #e2e4e6;
 	color: dimgrey;
-	font-size: 15px;
-	display: block;
 	cursor: pointer;
-	font-family: sans-serif;
+	font-family: fantasy;
 	text-align: center;
 	padding: 10px 0px 10px 0px;
 	border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-	font-family: fantasy;
 	font-size: larger;
+	display: table;
 }
 .nueva-tarjeta{
 	width: 20%;
@@ -70,14 +69,13 @@ body {
 	font-size: 15px;
 	display: block;
 	font-family: sans-serif;
-	float: left;
 	text-align: center;
 	padding: 10px 0px 20px 0px;
 	border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-	font-family: cursive;
+	float: left;
 }
-
-
-
+.desaparecer{
+	display: inline-block;
+	float: left;
 }
