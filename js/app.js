@@ -12,7 +12,7 @@ window.addEventListener("load",function(){
     function imprimirFormulario(){
         
         formulario.classList.remove("aparecer");
-        spanAñadir.classList.add("aparecer");
+        spanAñadir.remove();
         input.focus();
     };
     
@@ -35,9 +35,40 @@ window.addEventListener("load",function(){
         
         input.value = "";
         
-       // var nuevasTarjetas = document.createElement("div");
-       // crearTajeta.insertBefore(nuevasTarjetas, crearTajeta.children[3]);
-         divNuevo();
+        var nuevasTarjetas = document.createElement("div");
+        crearTajeta.insertBefore(nuevasTarjetas, crearTajeta.children[3]);
+        
+        
+        divNuevo();
+        
+        crearTajeta.addEventListener("click",function(){
+            
+            crearTajeta.style.display="none";
+            
+            var nuevoForm = document.createElement("form");
+                subContenedor.appendChild(nuevoForm);
+            
+            var nuevoTextArea = document.createElement("textarea");
+                nuevoForm.appendChild(nuevoTextArea);
+            
+            var nuevoBoton = document.createElement("button");
+                nuevoBoton.innerText = "Guardar";
+                nuevoForm.appendChild(nuevoBoton);
+            
+            nuevoBoton.addEventListener("click",function(e){
+                e.preventDefault();
+                
+                nuevoForm.style.display="none";
+                
+                var newTarjeta = document.createElement("span");
+                    newTarjeta.innerText = nuevoTextArea.value;
+                    newTarjeta.style.display="block";
+                    nuevasTarjetas.appendChild(newTarjeta);
+                    
+                    subContenedor.appendChild(crearTajeta);
+                    crearTajeta.style.display = "inline-block";
+            });
+        });
     };
     function divNuevo(){
         var nuevoDiv = document.createElement("div");

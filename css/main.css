@@ -1,9 +1,13 @@
 body {
 	background-color: lemonchiffon;
 }
-.subcontenedor{
-	display: inline-block;
+.contendor{
 	vertical-align: top;
+
+}
+.subcontenedor{
+	vertical-align: top;
+	
 }
 
 #añade {
