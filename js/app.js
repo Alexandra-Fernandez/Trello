@@ -55,20 +55,20 @@ window.addEventListener("load",function(){
             crearTarjeta.style.display="none";
             
             var nuevoForm = document.createElement("div");
-                nuevoForm.classList.add("nuevaTarjeta");
-                subContenedor.appendChild(nuevoForm);
+            nuevoForm.classList.add("nuevaTarjeta");
+            subContenedor.appendChild(nuevoForm);
             
             var nuevoTextArea = document.createElement("textarea");
-                nuevoTextArea.classList.add("textarea")
-                nuevoTextArea.setAttribute("rows", "3");
-                nuevoTextArea.setAttribute("cols", "8");
-                nuevoForm.appendChild(nuevoTextArea);
+            nuevoTextArea.classList.add("textarea")
+            nuevoTextArea.setAttribute("rows", "3");
+            nuevoTextArea.setAttribute("cols", "8");
+            nuevoForm.appendChild(nuevoTextArea);
             
             var nuevoBoton = document.createElement("button");
-                nuevoBoton.classList.add("nuevoboton");
-                nuevoBoton.innerText = "Guardar";
-                nuevoForm.appendChild(nuevoBoton);
-                caja.appendChild(nuevoForm);
+            nuevoBoton.classList.add("nuevoboton");
+            nuevoBoton.innerText = "Guardar";
+            nuevoForm.appendChild(nuevoBoton);
+            caja.appendChild(nuevoForm);
                 
             
             nuevoBoton.addEventListener("click", function(e){
@@ -76,14 +76,13 @@ window.addEventListener("load",function(){
                 
                 crearTarjeta.style.display="block";
                 var newTarjeta = document.createElement("div");
-                    newTarjeta.classList.add("subtitulo")
-                    newTarjeta.innerText = nuevoTextArea.value;
-                    nuevoForm.style.display="none";
+                newTarjeta.classList.add("subtitulo")
+                newTarjeta.innerText = nuevoTextArea.value;
+                nuevoForm.style.display="none";
                    
-                    caja.appendChild(newTarjeta);
-                    caja.appendChild(crearTarjeta);
+                caja.appendChild(newTarjeta);
+                caja.appendChild(crearTarjeta);
                 
-                 //nombreLista.parentElement.insertBefore(nuevoTextArea,nombreLista.parentElement.children[1]);
             });
         });
     };
@@ -92,14 +91,13 @@ window.addEventListener("load",function(){
          
         var newContenedor = document.createElement("div");
         newContenedor.setAttribute("id","newContenedor")
-//        newContenedor.appendChild(caja);
         newContenedor.classList.add("newContenedor");
         newContenedor.appendChild(spanAñadir);
         newContenedor.appendChild(formulario);
         spanAñadir.style.display="inline-bock";
         subContenedor.appendChild(newContenedor);
          
-         return newContenedor;
+        return newContenedor;
 
         
     }
