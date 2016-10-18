@@ -2,6 +2,10 @@ body{
 	background-color: dodgerblue;
 }
 
+#contenedor{
+	white-space: nowrap;
+}
+
 #subcontenedor{
 	display: inline-block;
 	
