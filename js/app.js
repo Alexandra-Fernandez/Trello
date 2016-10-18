@@ -1,10 +1,10 @@
 window.addEventListener("load",function(){
-	var boton = document.getElementById("boton");
-	var spanAñadir = document.getElementById("anade");
-	var input = document.getElementById("input");
-	var formulario = document.getElementById("formulario");
     var contenedor = document.getElementById("contenedor");
     var subContenedor = document.getElementById("subcontenedor");
+	var spanAñadir = document.getElementById("anade");
+	var formulario = document.getElementById("formulario");
+	var input = document.getElementById("input");
+	var boton = document.getElementById("boton");
 
 	spanAñadir.addEventListener("click",imprimirFormulario);
     boton.addEventListener("click",imprimirNombreLista);
@@ -19,37 +19,35 @@ window.addEventListener("load",function(){
     function imprimirNombreLista(e){
         e.preventDefault();
         
+        formulario.classList.add("ocultar");
+        spanAñadir.classList.remove("ocultar");
         
         var caja = document.createElement("div");
-            caja.classList.add("caja");
+        caja.classList.add("caja");
         
         var nombreLista = document.createElement("div");
-            nombreLista.classList.add("tituloLista");
-            nombreLista.innerText = input.value;
+        nombreLista.classList.add("tituloLista");
+        nombreLista.innerText = input.value;
         
         var crearTarjeta = document.createElement("div");
-            crearTarjeta.classList.add("tarjeta");
+        crearTarjeta.classList.add("tarjeta");
         
-        var tarjeta = document.createElement("a")
-            tarjeta.setAttribute("href", "#");
-            tarjeta.innerText = "Añadir una tarjeta";
+        var tarjeta = document.createElement("a");
+        tarjeta.setAttribute("href", "#");
+        tarjeta.innerText = "Añadir una tarjeta";
         
-            crearTarjeta.appendChild(tarjeta);
-        
-        subContenedor.appendChild(caja);
-        caja.appendChild(nombreLista);
-        caja.appendChild(crearTarjeta);
-        
-        //spanAñadir.classList.remove("aparecer");
-        //contenedor.appendChild(subContenedor);
-        
-        
-//        subContenedor.appendChild(nombreLista);
-//        subContenedor.appendChild(crearTarjeta);
-           
+        crearTarjeta.appendChild(tarjeta);    
+        var subContenedor = divNuevo();
+        subContenedor.insertBefore( caja, subContenedor.lastElementChild);        
+        caja.appendChild(nombreLista);        caja.appendChild(crearTarjeta);
         input.value = ""; 
         
-        divNuevo();
+        formulario.remove();
+        spanAñadir.remove();
+        subContenedor.parentElement.appendChild(formulario);
+        subContenedor.parentElement.appendChild(spanAñadir);
+        
+
         
         crearTarjeta.addEventListener("click", function(e){
            e.preventDefault();
@@ -62,6 +60,8 @@ window.addEventListener("load",function(){
             
             var nuevoTextArea = document.createElement("textarea");
                 nuevoTextArea.classList.add("textarea")
+                nuevoTextArea.setAttribute("rows", "3");
+                nuevoTextArea.setAttribute("cols", "8");
                 nuevoForm.appendChild(nuevoTextArea);
             
             var nuevoBoton = document.createElement("button");
@@ -76,21 +76,32 @@ window.addEventListener("load",function(){
                 
                 crearTarjeta.style.display="block";
                 var newTarjeta = document.createElement("div");
-                    newTarjeta.classList.add("tituloLista")
+                    newTarjeta.classList.add("subtitulo")
                     newTarjeta.innerText = nuevoTextArea.value;
                     nuevoForm.style.display="none";
                    
                     caja.appendChild(newTarjeta);
                     caja.appendChild(crearTarjeta);
+                
+                 //nombreLista.parentElement.insertBefore(nuevoTextArea,nombreLista.parentElement.children[1]);
             });
         });
     };
+    
      function divNuevo(){
          
-        var nuevoDiv = document.createElement("div");
-        contenedor.appendChild(nuevoDiv);
-        nuevoDiv.appendChild(formulario);
-        nuevoDiv.style.display="inline-block";
+        var newContenedor = document.createElement("div");
+        newContenedor.setAttribute("id","newContenedor")
+//        newContenedor.appendChild(caja);
+        newContenedor.classList.add("newContenedor");
+        newContenedor.appendChild(spanAñadir);
+        newContenedor.appendChild(formulario);
+        spanAñadir.style.display="inline-bock";
+        subContenedor.appendChild(newContenedor);
+         
+         return newContenedor;
+
+        
     }
 });
    
